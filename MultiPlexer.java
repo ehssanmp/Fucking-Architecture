@@ -8,8 +8,8 @@ import simulator.wrapper.Wrapper;
 
 public class MultiPlexer extends Wrapper {
 
-	public MultiPlexer(String label, String stream, Link[] link, Link... links) {
-		super(label, stream, link, links);
+	public MultiPlexer(String label, String stream, Link... links) {
+		super(label, stream, links);
 		// TODO Auto-generated constructor stub
 		
 	}
@@ -21,8 +21,7 @@ public class MultiPlexer extends Wrapper {
         Not not2 = new Not("N2", getInput(2));
         Not not3 = new Not("N3", getInput(3));
         Not not4 = new Not("N4", getInput(4));
-        addOutput(not0.getOutput(0));
-       /* And[] ands = new And[32];
+        And[] ands = new And[32];
         ands[0]= new And("D0",not0.getOutput(0),not1.getOutput(0),not2.getOutput(0),not3.getOutput(0),not4.getOutput(0));
         ands[1]= new And("D1",getInput(0),not1.getOutput(0),not2.getOutput(0),not3.getOutput(0),not4.getOutput(0));
         ands[2]= new And("D2",not0.getOutput(0),getInput(1),not2.getOutput(0),not3.getOutput(0),not4.getOutput(0));
@@ -57,7 +56,7 @@ public class MultiPlexer extends Wrapper {
         ands[31]= new And("D31",not0.getOutput(0),not1.getOutput(0),getInput(2),getInput(3),getInput(4));
         for (int i=0; i<32;++i) {
         	addOutput(ands[i].getOutput(0));
-        }*/
+        }
 
 	}
 
