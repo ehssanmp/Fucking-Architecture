@@ -19,10 +19,9 @@ public class Sample {
     	
     	//sample circuit
     	Link [] links= new Link[1024];
-    	for(int i=0; i<32;++i) {
+    	for(int i=1; i<32;++i) {
     		links[i]=Simulator.trueLogic;
     	}
-    	links[0]=Simulator.falseLogic;
     	for(int i=32;i<1024;++i) {
     		links[i]=Simulator.falseLogic;
     	}
@@ -30,11 +29,12 @@ public class Sample {
     	for(int i=0;i<32;++i) {
     		mx.addInput(links[i]);
     	}*/
+    	
     	MultiP mp= new MultiP("hello","1029X32",Simulator.falseLogic,Simulator.falseLogic,Simulator.falseLogic,Simulator.falseLogic,Simulator.falseLogic);
     	for(int i=0;i<1024;++i) {
     		mp.addInput(links[i]);
     	}
-    	
+    	links[0]=Simulator.falseLogic;
     	Clock clk = new Clock("CLOCK",1000);
 
         Simulator.debugger.addTrackItem(clk,mp);
